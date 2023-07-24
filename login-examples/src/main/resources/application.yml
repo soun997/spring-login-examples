@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3307/security
+    url: jdbc:mariadb://i9a403.p.ssafy.io/soyun
     username: root
     password: 1234
 

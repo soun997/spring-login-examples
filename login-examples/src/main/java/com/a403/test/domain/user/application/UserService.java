@@ -6,6 +6,7 @@ import com.a403.test.domain.user.entity.User;
 import com.a403.test.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +20,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     // Spring Security를 사용한 로그인 구현 시 사용
-    //private final BCryptPasswordEncoder encoder;
+    private final BCryptPasswordEncoder encoder;
 
     /**
      * loginId 중복 체크
@@ -55,7 +56,7 @@ public class UserService {
      * loginId, nickname 중복 체크는 Controller에서 진행 => 에러 메세지 출력을 위해
      */
     public void join2(JoinRequest req) {
-        //userRepository.save(req.toEntity(encoder.encode(req.getPassword())));
+        userRepository.save(req.toEntity(encoder.encode(req.getPassword())));
     }
 
     /**
