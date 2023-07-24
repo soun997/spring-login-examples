@@ -75,7 +75,11 @@ public class UserService {
         User user = optionalUser.get();
 
         // 찾아온 User의 password와 입력된 password가 다르면 null return
-        if(!user.getPassword().equals(req.getPassword())) {
+//        if(!user.getPassword().equals(req.getPassword())) {
+//            return null;
+//        }
+        // 인코딩된 password를 request로 들어온 password와 매칭 -> 매치가 되지 않는다면 null return
+        if (!encoder.matches(req.getPassword(), user.getPassword())) {
             return null;
         }
 
