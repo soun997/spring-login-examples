@@ -27,4 +27,8 @@ public class User {
     private String nickname;
 
     private UserRole role;
+
+    // Google 로그인
+    private String provider;
+    private String providerId;
 }

@@ -13,6 +13,17 @@ spring:
         format_sql: true #To beautify or pretty print the SQL
         show_sql: true #show sql
 
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 576948301615-8ufadev53dgsclrt6ssobvbnmksbg2cl.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
 logging:
   level:
     org.hibernate:
